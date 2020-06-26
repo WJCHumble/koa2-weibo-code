@@ -1,8 +1,25 @@
 const router = require("koa-router")();
 
 router.get("/", async (ctx, next) => {
+  // 调 render() 方法的本质是将变量传递给页面
   await ctx.render("index", {
     title: "Hello Koa 2!",
+    msg: "你好",
+    isMe: false,
+    blogList: [
+      {
+        id: 1,
+        title: "aaa",
+      },
+      {
+        id: 2,
+        title: "bbb",
+      },
+      {
+        id: 2,
+        title: "ccc ",
+      },
+    ],
   });
 });
 
